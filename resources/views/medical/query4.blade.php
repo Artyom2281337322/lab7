@@ -26,7 +26,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3" class="text-center">Нет данных или врач Иванов И.И. не найден</td>
+                            
                         </tr>
                     @endforelse
                 </tbody>

@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
          Schema::create('appointments', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_appointment');
             $table->foreignId('patient_id')->constrained('patients', 'id_patient')->onDelete('cascade');
             $table->foreignId('doctor_id')->constrained('doctors', 'id_doctor')->onDelete('cascade');
             $table->dateTime('datetime');

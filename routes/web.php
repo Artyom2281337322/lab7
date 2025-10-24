@@ -20,10 +20,9 @@ Route::prefix('medical')->group(function () {
     Route::get('/query8', [MedicalViewController::class, 'showQuery8']);
     Route::get('/query9', [MedicalViewController::class, 'showQuery9']);
     Route::get('/query10', [MedicalViewController::class, 'showQuery10']);
-    Route::get('/all', [MedicalViewController::class, 'showAllQueries']);
 });
 
-// API маршруты (возвращают JSON)
+
 Route::prefix('api/medical')->group(function () {
     Route::get('/query1', [MedicalQueryController::class, 'query1']);
     Route::get('/query2', [MedicalQueryController::class, 'query2']);
@@ -35,7 +34,6 @@ Route::prefix('api/medical')->group(function () {
     Route::get('/query8', [MedicalQueryController::class, 'query8']);
     Route::get('/query9', [MedicalQueryController::class, 'query9']);
     Route::get('/query10', [MedicalQueryController::class, 'query10']);
-    Route::get('/all', [MedicalQueryController::class, 'allQueries']);
 });
 
 // Тестовые маршруты (можно удалить после проверки)
@@ -56,7 +54,7 @@ Route::prefix('test')->group(function () {
         return view('medical.query2', ['title' => 'Тест Запрос 2', 'data' => $data]);
     });
 });
-// Отладочные маршруты для проблемных запросов
+
 Route::prefix('debug')->group(function () {
     Route::get('/query4', function () {
         $controller = new App\Http\Controllers\MedicalQueryController();
